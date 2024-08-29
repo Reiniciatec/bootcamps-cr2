@@ -9,4 +9,6 @@
 - [Snippets de código](/src/utils/snippets.ipynb) 📦
 
 ## QR del repositorio
-![QR del repositorio](/public/repo-qr.png)
+<div style="text-align: center;">
+  <img src="./public/repo-qr.png" alt="QR del repositorio" width="300"/>
+</div>
