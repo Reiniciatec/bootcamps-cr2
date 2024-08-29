@@ -7,3 +7,6 @@
 ## Recursos 📚
 
 - [Snippets de código](/src/utils/snippets.ipynb) 📦
+
+## QR del repositorio
+![QR del repositorio](/public/repo-qr.png)
