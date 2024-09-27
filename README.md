@@ -184,14 +184,11 @@ def main():
 
 ### Mover un servomotor
 ```python
-def mover_servo(posicion: int, motor_index: int = 1):
-    """
-    Mover el servomotor a una posición específica.
+def mover_servomotor(angulo: int = 90, port: int = 3, intervalo: int = 0):
+    if (angulo < 0 or angulo > 180):
+        raise ValueError("El angulo no puede ser utilizado")
     
-    @param posicion (int): Posición a la que se moverá el servo.
-    @param motor_index (int): Índice del motor al que se moverá el servo.
-    """
-    m.servo_set(posicion, motor_index)
+    mbot2.servo_set(angulo, port)
 ```
 
 ## 7. Luces LED
@@ -218,4 +215,72 @@ def ajustar_led_animado(animation: str = "rainbow"):
     @param animation (str): Nombre de la animación a mostrar.
     """
     cy.led.play(animation)
+```
+
+## 8. Listas
+
+### Crear una Lista
+```python
+mi_lista = [1, 2, 3, 4]
+```
+
+### Acceder a un elemento de la lista (Indices)
+```python
+elemento = mi_lista[0] # Recordar que en listas, se empieza contando desde el 0
+print(elemento) # Imprimiria el 1
+```
+
+### for para recorrer una lista
+```python
+for elemento in mi_lista:
+    print(elemento)
+```
+
+###  Longitud de una lista con len
+```python
+longitud = len(mi_lista)
+print(longitud)  # Muestra 4
+```
+
+###  Usar range con un solo argumento
+```python
+for i in range(5):
+    print(i)  # Muestra 0, 1, 2, 3, 4
+```
+
+### Usar range con inicio y fin
+```python
+for i in range(2, 5):
+    print(i)  # Muestra 2, 3, 4
+```
+
+### Combinando range con len para recorrer una lista por índices
+```python
+for i in range(len(mi_lista)):
+    print(f"Índice {i}: {mi_lista[i]}")
+```
+
+### Agregar elementos a la lista
+```python
+mi_lista.append(5)
+print(mi_lista)  # [1, 2, 3, 4, 5]
+```
+
+### Agregar en una posición específica
+```python
+mi_lista.insert(2, 999)  # Agrega 999 en la posición 2
+print(mi_lista)  # [1, 2, 999, 3, 4, 5]
+```
+
+###  Eliminar elementos de la lista por valor
+```python
+mi_lista.remove(999)
+print(mi_lista)  # [1, 2, 3, 4, 5]
+```
+
+### Eliminar elementos de la lista por posición
+```python
+elemento_eliminado = mi_lista.pop(2)  # Elimina el elemento en la posición 2
+print(elemento_eliminado)  # Muestra 3
+print(mi_lista)  # [1, 2, 4, 5]
 ```
