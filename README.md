@@ -284,3 +284,47 @@ elemento_eliminado = mi_lista.pop(2)  # Elimina el elemento en la posición 2
 print(elemento_eliminado)  # Muestra 3
 print(mi_lista)  # [1, 2, 4, 5]
 ```
+
+## 9. Sensar colores
+
+Colores Posibles:
+* r: rojo
+* g: verde
+* b: azul
+* y: amarillo
+* k: negro
+* w: blanco
+
+### Encontrar un color
+```python
+def encontrar_color(color, sensor_index = 1) -> bool:
+    return cyberpi.quad_rgb_sensor.is_color(color, "any", sensor_index) # Retorna True, si se encuentra sobre el color buscado, en caso contrario retorna False
+```
+
+### Detectar colores
+```python
+def detectar_color(sensor_index = 1) -> str:
+    return cyberpi.quad_rgb_sensor.get_color_sta(2, sensor_index)[0] # Retorna el color sobre el cual se encuentre
+```
+
+### Detectar colores y almacenarlos en una lista
+```python
+def detectar_y_almacenar_colores(lista_colores):
+    colores_prohibidos = ['w', "k"]
+    
+    color_detectado = detectar_color()
+    
+    # Verificar si el color no está en la lista y no está prohibido
+    if color_detectado not in lista_colores and color_detectado not in colores_prohibidos:
+        lista_colores.append(color_detectado)
+```
+
+### Encontrar el color dentro de una lista de colores
+```python
+def encontrar_colores_en_la_lista(lista_colores):
+    # Para cada color en mi lista de colores
+    for color in lista_colores:
+        if encontrar_color(color):
+            cyberpi.led.on(color, "all") # Prendo las luces LED en el color
+            return color
+```
