@@ -184,11 +184,12 @@ def main():
 
 ### Mover un servomotor
 ```python
-def mover_servomotor(angulo: int = 90, port: int = 3, intervalo: int = 0):
+def mover_servomotor(angulo: int = 90, puerto: int = 3, intervalo: int = 0):
     if (angulo < 0 or angulo > 180):
         raise ValueError("El angulo no puede ser utilizado")
     
-    mbot2.servo_set(angulo, port)
+    mbot2.servo_set(angulo, puerto)
+    time.sleep(intervalo)
 ```
 
 ## 7. Luces LED
