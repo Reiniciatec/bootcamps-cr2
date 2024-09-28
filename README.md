@@ -158,13 +158,13 @@ def seguir_linea(velocidad_base: int = 40):
     
     @param velocidad_base (int): Velocidad base de los motores.
     """
-    offset = cy.quad_rgb_sensor.get_offset_track(index=1)
+    offset = cyberpi.quad_rgb_sensor.get_offset_track(index=1)
     factor = (offset / 2) * -1
     
     motor_derecho = velocidad_base - factor
     motor_izquierdo = velocidad_base + factor
     
-    m.drive_speed(motor_izquierdo, -motor_derecho)
+    mbot2.drive_speed(motor_izquierdo, -motor_derecho)
 ```
 
 ### Romper un ciclo de seguimiento de línea
