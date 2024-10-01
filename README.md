@@ -194,6 +194,15 @@ def mover_servomotor(angulo: int = 90, puerto: int = 3, intervalo: int = 0):
 
 ## 7. Luces LED
 
+### Encender luces LED en un color determinado
+```python
+def encender_led(color: str = "red"):
+    """
+    @param color (str): Valor del color a utilizar
+    """
+    cyberpi.led.on(color, "all")
+```
+
 ### Ajustar el color de los LEDs
 ```python
 def ajustar_led(red: int = 0, green: int = 0, blue: int = 0):
