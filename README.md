@@ -203,6 +203,21 @@ def encender_led(color: str = "red"):
     cyberpi.led.on(color, "all")
 ```
 
+### Encender luces LED durante un tiempo determinado
+```python
+def encender_led(color: str = "red", intervalo: int = 0):
+    """
+    @param color (str): Valor del color a utilizar
+    @param intervalo (int): Tiempo a esperar, si es 0, no se esperara
+    """
+    cyberpi.led.on(color, "all")
+    
+    if (intervalo != 0):
+        time.sleep(intervalo)
+        
+    cyberpi.led.off()
+```
+
 ### Ajustar el color de los LEDs
 ```python
 def ajustar_led(red: int = 0, green: int = 0, blue: int = 0):
