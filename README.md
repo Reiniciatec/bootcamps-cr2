@@ -214,8 +214,7 @@ def encender_led(color: str = "red", intervalo: int = 0):
     
     if (intervalo != 0):
         time.sleep(intervalo)
-        
-    cyberpi.led.off()
+        cyberpi.led.off()
 ```
 
 ### Ajustar el color de los LEDs
